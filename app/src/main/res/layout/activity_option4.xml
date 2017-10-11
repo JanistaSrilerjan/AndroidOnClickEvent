@@ -43,4 +43,22 @@
         android:textAppearance="@style/text_title"
         android:background="@color/colorAccent"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+       >
+
+        <Button
+            android:id="@+id/btn_prev_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="previous" />
+
+        <Button
+            android:id="@+id/btn_next_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="next" />
+    </LinearLayout>
 </LinearLayout>

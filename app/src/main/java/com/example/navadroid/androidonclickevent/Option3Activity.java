@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
 
     private EditText etInput;
     private TextView tvOutput;
+   // private Option3Activity act3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_option3);
         bindView();
         initView();
+      //  act3 = new Option3Activity();
     }
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
@@ -30,6 +33,16 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.btn_process_3:
                 greet();
+                break;
+            case R.id.btn_prev_3:
+                //Intent i=new Intent(act3,Option2Activity.class);
+                Intent i=new Intent(getApplicationContext(),Option2Activity.class);
+                startActivity(i);
+                break;
+
+            case R.id.btn_next_3:
+                Intent j=new Intent(Option3Activity.this,Option4Activity.class);
+                startActivity(j);
                 break;
         }
         hideKeyboardInput(v);
@@ -44,6 +57,8 @@ public class Option3Activity extends AppCompatActivity implements View.OnClickLi
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_3).setOnClickListener(this); // Think about... Who is "this"?
+        findViewById(R.id.btn_prev_3).setOnClickListener(this);
+        findViewById(R.id.btn_next_3).setOnClickListener(this);
     }
 
     // To greet the user
